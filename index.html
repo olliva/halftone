@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Halftone</title>
+        <link rel="stylesheet" type="text/css" href="foundation.css"></link>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8"></meta>
+        <script src="jquery-1.8.3.min.js" ></script>
+        <script src="jquery.royalslider.min.js" ></script>
+        <link href="royalslider.css" rel="stylesheet"></link>
+        <script src="jquery.easing-1.3.js" ></script>
+        <link href="rs-minimal-white.css" rel="stylesheet"></link>
+    </head>
+
+    <style type="text/css">
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: "MenschRegular", "helvetica", arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            background: url("pageBackground.png");
+        }
+        p{
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+            line-height: 21px;
+            margin-top: 5px;
+            color: white;
+            font-weight: lighter;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        ul[type="none"] {
+            margin: 0;
+            padding: 0;
+        }
+        input:focus{
+            outline:none;
+        }
+        .row{
+            min-width: 0;
+        }
+        .pageContainer{
+            padding: 0 60px;
+            max-width: 1040px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .header{
+            background-color: #d3d1c1;
+            text-align: center;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .header .headerIcon{
+            padding: 14px 7px;
+        }
+
+        .logoContainer{
+            text-align: center;
+            background-color: #ebe8d5;
+            padding: 0 21px;
+            position: relative;
+            padding-bottom: 25px;
+        }
+
+        .logoContainer .logoRow{
+            border-bottom: 3px solid #9b9990;
+        }
+
+        .logoContainer #logoImage{
+            padding: 30px 0 35px 0;
+        }
+
+        .logoContainer .navigation{
+            margin-top: 4px;
+            border-top: 1px solid #9a998f;
+            border-bottom: 1px solid #9a998f;
+        }
+
+        .logoContainer .menuList {
+            margin: 22px 0;
+        }
+
+
+        .logoContainer ul.menuList li{
+            display: inline-block;
+            line-height: 35px;
+            margin: 2px 27px;
+        }
+
+        .logoContainer ul.menuList li a{
+            color: #4d4d4d;
+            font-size: 18px;
+            padding: 8px 0;
+            display: block;
+            position: relative;
+        }
+
+        .logoContainer ul.menuList li a:hover{
+            color: #ffffff;
+            background-color: #e37655;
+            width: 100%;
+            line-height: 21px;
+        }
+
+        .logoContainer ul.menuList li a:hover:after{
+            content: " ";
+            background: url("littleRibbonRight.png");
+            width: 14px;
+            height: 37px;
+            position: absolute;
+            top: 0;
+        }
+
+        .logoContainer ul.menuList li a:hover:before{
+            content: " ";
+            background: url("littleRibbonLeft.png");
+            width: 14px;
+            height: 37px;
+            position: absolute;
+            top: 0;
+            left: -14px;
+        }
+
+        .sliderContainer{
+            margin: 0 auto;
+            padding: 0 50px;
+            max-width: 1060px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .sliderContainer .row .twelve{
+            padding: 0;
+        }
+
+
+        .contentAfterSlider:before{
+            content: url("leftTriangle.png");
+            position: absolute;
+            top: -2px;
+            left: -10px;
+        }
+        .contentAfterSlider:after{
+            content: url("rightTriangle.png");
+            position: absolute;
+            top: -2px;
+            right: -10px;
+        }
+        .pageContainer .logoContainer .headerText{
+            padding-top: 70px;
+            font-size: 30px;
+            color: #4d4d4d;
+        }
+        .pageContainer .starLine{
+            padding: 0;
+            border-top: 3px solid #9e9c93;
+            margin-top: 54px;
+            width: 45%;
+            display: inline-block;
+            height: 7px;
+            border-bottom: 1px solid #9e9c93;
+        }
+        .starContainer{
+            text-align: center;
+            width: 10%;
+            float: left;
+        }
+        .pageContainer .leftLine{
+            float: left;
+        }
+        .pageContainer .rightLine{
+            float: right;
+        }
+        .pageContainer .logoContainer .starIcon{
+            padding-top: 45px;
+        }
+
+        .contentImage{
+            width: 100%;
+            height: 300px;
+            background-color: #a9b082;
+            position: relative;
+            text-align: center;
+        }
+        .dateImage{
+            position: absolute;
+            bottom: -36px;
+            left: 50%;
+            margin-left: -35.5px;
+        }
+        .contentHeader{
+            margin-top: 50px;
+            font-size: 13px;
+            padding-bottom: 20px;
+            color: #4d4d4d;
+            border-bottom: 1px solid #888888;
+            line-height: 22px;
+        }
+        .contentText{
+            font-size: 10px;
+            margin-top: 17px;
+            color: #888888;
+            padding-bottom: 50px;
+        }
+
+
+        .ribbonContainer{
+            background-color: #e37655;
+        }
+        .ribbonContainer:before{
+            content: url("leftRibbon.png");
+            position: absolute;
+            top: -10px;
+            left: -56px;
+        }
+        .ribbonContainer:after{
+            content: url("rightRibbon.png");
+            position: absolute;
+            top: -10px;
+            right: -57px;
+        }
+
+        .ribbonContainer .smallRibbonText{
+            color: #4d4d4d;
+            padding-top: 25px;
+            font-size: 12px;
+        }
+        .ribbonAndDownText{
+            color: #ffffff;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        .ribbonAndDownText a{
+            color: #fdd600;
+        }
+
+
+
+        .underMenuContainer{
+            background: url("background.png") repeat;
+        }
+        .underMenuContainer .logoContainer{
+            background-color: transparent;
+        }
+        .underMenuContainer .underRibbonMenu{
+            padding-bottom: 70px;
+        }
+        .underRibbonMenu .three{
+            padding-top: 50px;
+        }
+        .underRibbonMenu .underRibbonMenuHeader{
+            font-size: 20px;
+            color: #e8e5d2;
+            border-bottom: 1px solid #605f5b;
+            padding-bottom: 5px;
+            margin-bottom: 7px;
+        }
+        .underRibbonMenu .firstColumnContentHeader{
+            text-align: left;
+            padding-top: 20px;
+            color: #e8e5d2;
+            font-size: 12px;
+        }
+        .underRibbonMenu .firstColumnContentData{
+            color: #878473;
+            text-align: left;
+            padding-top: 10px;
+            font-size: 12px;
+        }
+        .underRibbonMenu .secondColumnContent{
+            text-align: left;
+            padding-top: 20px;
+            color: #e8e5d2;
+            border-bottom: 1px solid #605f5b;
+            padding-bottom: 8px;
+            font-size: 12px;
+        }
+        .underRibbonMenu .secondColumnContent span{
+            color: #878473;
+        }
+        .underRibbonMenu .forthColumnContent,
+        .underRibbonMenu .thirdColumnContent{
+            text-align: left;
+            padding-top: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            color: #e8e5d2;
+        }
+        .underRibbonMenu .forthColumnInput{
+            border-color: transparent;
+            border-radius: 0px;
+            margin-top: 15px;
+            height: 42px;
+            position: relative;
+        }
+        .underRibbonMenu .forthColumnInput input{
+            padding: 15px 45px 15px 15px;
+            border-color: transparent;
+            border-radius: 0px;
+            height: 100%;
+            margin: 0;
+            font-size: 12px;
+            line-height: 12px;
+        }
+        .underRibbonMenu .forthColumnInput .inputImage{
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            background-color: #f0eddd;
+            top: 0;
+            right: 0;
+            text-align: center;
+            border-left: 1px solid #c0beb1;
+        }
+        .underRibbonMenu .forthColumnInput .inputImage a{
+            width: 42px;
+            height: 42px;
+            display: block;
+        }
+        .underRibbonMenu .forthColumnInput .inputImage img{
+            margin-top: 12px;
+        }
+
+
+        .bottomLine .logoContainer{
+            background-color: #4d4d4d;
+            border-top: 1px solid #656565;
+        }
+        .bottomLine .bottomLineImageContainer{
+            position: absolute;
+            background: url("bottomArrowBackground.png");
+            width: 41px;
+            height: 27px;
+            top: -15px;
+            left: 50%;
+            margin-left: -20.5px;
+        }
+        .bottomLine .bottomLineImageContainer img{
+            padding-top: 10px;
+        }
+        .bottomLine .bottomLineText{
+            padding-top: 30px;
+        }
+
+
+
+
+
+        #slider-with-blocks-1 {
+            width: 100%;
+        }
+
+        .rsContent {
+            color: #FFF;
+            font-size: 24px;
+            line-height: 32px;
+            float: left;
+        }
+        .bContainer {
+            position: relative;
+        }
+        .rsABlock {
+            position: relative;
+            display: block;
+            left: auto;
+            top: auto;
+        }
+        .blockHeadline {
+            font-size: 42px;
+            line-height: 50px;
+        }
+        .blockSubHeadline {
+            font-size: 32px;
+            line-height: 40px
+        }
+        .txtCent {
+            text-align: center; 
+            width: 100%; 
+        }
+
+        .slide1 {
+            background: #f06b50;
+        }
+        .slide1 .bContainer {
+            top: 36%;
+        }
+        .slide2 {
+            background: #ffbc11;
+            color:#000;
+        }
+        .slide2 .bContainer {
+            top: 24px;
+        }
+        .slide2 .txtCent {
+            line-height: 44px;
+        }
+        .slide2 .blockHeadline {
+            line-height: 66px;
+        }
+        .slide3 {
+            background: #45aab8;
+            color:#FFF;
+        }
+        .slide3 .bContainer {
+            top: 24px;
+        }
+        .slide3 span {
+            line-height: 44px;
+        }
+        .slide4 .bContainer {
+            position: absolute;
+            left: 0;
+            width: 100%;
+            height: auto;
+            top: 24px;
+        }
+
+        .photoCopy {
+            position: absolute;
+            line-height: 24px;
+            font-size: 12px;
+            background: black;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.75);
+            padding: 0px 10px;
+            position: absolute;
+            left: 12px;
+            bottom: 12px;
+            top: auto;
+            border-radius: 2px;
+            z-index: 25;
+        }
+        .photoCopy a {
+            color: #FFF;
+        }
+        .palmImg {
+            left: 0;
+            top: auto;
+            bottom: -60px;
+            position: absolute;
+        }
+
+        @media screen and (min-width: 0px) and (max-width: 960px) { 
+            .rsContent {
+                font-size: 22px;
+                line-height: 28px;
+            }
+            .blockHeadline {
+                font-size: 32px;
+                line-height: 32px;
+            }
+            .blockSubHeadline {
+                font-size: 26px;
+                line-height: 32px
+            }
+        }
+        @media screen and (min-width: 0px) and (max-width: 767px){
+            .pageContainer{
+                padding: 0;
+            }
+            .sliderContainer{
+                padding: 0;
+            }
+            .ribbonContainer:before,
+            .ribbonContainer:after,
+            .contentAfterSlider:before,
+            .contentAfterSlider:after{
+                display: none;
+            }
+            .pageContainer .starLine{
+                width: 45%;
+            }
+        }
+            
+        @media screen and (min-width: 0px) and (max-width: 500px) { 
+            .royalSlider,
+            .rsOverflow {
+                height: 330px !important;
+            }
+            .rsContent {
+                font-size: 18px;
+                line-height: 26px;
+            }
+            .blockHeadline {
+                font-size: 24px;
+                line-height: 32px;
+            }
+            .blockSubHeadline {
+                font-size: 22px;
+                line-height: 32px;
+            }
+        }
+    </style>
+
+    <!--[if gte IE 8]>
+        <style>
+            .pageContainer{
+                width: 1040px;
+            }
+            .sliderContainer{
+                width: 1040px;
+            }
+        </style>
+    <![endif]-->
+
+    <body>
+    <script type="text/javascript">
+        $(function() {
+            $('#slider-with-blocks-1').royalSlider({
+                arrowsNav: true,
+                arrowsNavAutoHide: false,
+                fadeinLoadedSlide: false,
+                controlNavigationSpacing: 0,
+                controlNavigation: 'bullets',
+                imageScaleMode: 'none',
+                imageAlignCenter:false,
+                blockLoop: true,
+                loop: true,
+                numImagesToPreload: 6,
+                transitionType: 'fade',
+                keyboardNavEnabled: true,
+                block: {
+                  delay: 400
+                }
+            });
+        });
+    </script>
+    <div class="pageContainer">
+        <div class="header">
+            <div class="row">
+                <div class="twelve columns">
+                    <a href="http://facebook.com"><img src="facebook.png" alt="facebook" class="headerIcon"/></a>
+                    <a href=""><img src="socialLogo.png" alt="" class="headerIcon"/></a>
+                    <a href="http://bribbble.com"><img src="sochialLogo3.png" alt="" class="headerIcon"/></a>
+                    <a href="http://twitter.com"><img src="sochialLogo4.png" alt="" class="headerIcon"/></a>
+                </div>
+            </div>
+        </div>
+        <div class="logoContainer">
+            <div class="row logoRow">
+                <div class="twelve columns">
+                     <img src="logo.png" alt="" id="logoImage"/>
+                </div>
+            </div>
+            <div class="row navigation">
+                <div class="twelve columns">
+                    <ul type="none" class="menuList">
+                        <li><a href="">HOME</a></li>
+                        <li><a href="">ABOUT</a></li>
+                        <li><a href="">BLOG</a></li>
+                        <li><a href="">WORK</a></li>
+                        <li><a href="">CONTACT</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="sliderContainer">
+        <div class="row">
+            <div class="twelve columns">
+                <div id="slider-with-blocks-1" class="royalSlider rsMinW">
+                    <div class="rsContent slide1">
+                        <div class="bContainer">
+                            <strong class="rsABlock txtCent blockHeadline">This is an animated block</strong>
+                            <span class="rsABlock txtCent" data-move-effect="none">you can place it on any type of slide</span>
+                        </div>
+                    </div>
+                    <div class="rsContent slide2">
+                        <div class="bContainer">
+                            <strong class="rsABlock txtCent blockSubHeadline" data-move-effect="none">Transition Types</strong>
+                            <span class="rsABlock txtCent" data-move-effect="top">from top  ↓</span>
+                            <span class="rsABlock txtCent" data-move-effect="bottom">from bottom ↑</span>
+                            <span class="rsABlock txtCent" data-move-effect="left">from left →</span>
+                            <span class="rsABlock txtCent" data-move-effect="right">from right ←</span>
+                            <span class="rsABlock txtCent" data-move-effect="none">just fade</span>
+                        </div>
+                    </div>
+                    <div class="rsContent slide3">
+                        <div class="bContainer">
+                            <strong class="rsABlock txtCent blockSubHeadline" data-move-effect="none" data-delay="0">Customizable Animation</strong>
+                            <span class="rsABlock txtCent" data-move-effect="left" data-delay="1000" data-move-offset="500" data-easing="easeOutBack" data-fade-effect="none">easing</span>
+                            <span class="rsABlock txtCent" data-move-effect="left" data-delay="1500" data-move-offset="500" data-easing="easeOutCirc" data-fade-effect="none">delay</span>
+                            <span class="rsABlock txtCent" data-move-effect="left" data-delay="2000" data-move-offset="500" data-speed="1000" data-fade-effect="none">speed</span>
+                            <span class="rsABlock txtCent" data-move-effect="left" data-delay="2500" data-move-offset="50" data-fade-effect="true">move offset</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pageContainer">
+        <div class="logoContainer contentAfterSlider">
+            <div class="row">
+                <div class="twelve columns headerText">
+                    HALFTOWN IS STYLISH AND CUTE
+                </div>
+            </div>
+            <div class="row">
+                <div class="leftLine starLine"></div>
+                <div class="starContainer"><img src="star.png" alt="star" class="starIcon"/></div>
+                <div class="rightLine starLine"></div>
+
+            </div>
+        </div>
+        <div class="logoContainer">
+            <div class="row">
+                <div class="four columns">
+                    <div class="contentImage">
+                        <img src="dataInCircule.png" alt="" class="dateImage"/>
+                    </div>
+                    <div class="contentHeader">PALLENTESQUE HABITANT MORBI TRISTIQUE SENECTUS ET NETUE ET</div>
+                    <div class="contentText">webdesign, print, photo</div>
+                </div>
+                <div class="four columns">
+                    <div class="contentImage">
+                        <img src="dataInCircule.png" alt="" class="dateImage"/>
+                    </div>
+                    <div class="contentHeader">PALLENTESQUE HABITANT MORBI TRISTIQUE SENECTUS ET NETUE ET</div>
+                    <div class="contentText">webdesign, print, photo</div>
+                </div>
+                <div class="four columns">
+                    <div class="contentImage">
+                        <img src="dataInCircule.png" alt="" class="dateImage"/>
+                    </div>
+                    <div class="contentHeader">PALLENTESQUE HABITANT MORBI TRISTIQUE SENECTUS ET NETUE ET</div>
+                    <div class="contentText">webdesign, print, photo</div>
+                </div>
+            </div>
+        </div>
+        <div class="logoContainer ribbonContainer">
+            <div class="row">
+                <div class="smallRibbonText">about 16 hours ago</div>
+                <div class="ribbonAndDownText">New at ThemeForest - FitnessMag - Responsive Blogging WordPress Theme <a href="http://t.co/O3it76LI">http://t.co/O3it76LI</a> </div>
+            </div>
+        </div>
+        <div class="underMenuContainer">
+            <div class="logoContainer underRibbonMenu">
+                <div class="row">
+                    <div class="three columns">
+                        <div class="underRibbonMenuHeader">RECENT POSTS</div>
+                        <div class="firstColumnContentHeader">Vestibulum tortor quam, feugiat.</div>
+                        <div class="firstColumnContentData">March 12, 2011</div>
+                        <div class="firstColumnContentHeader">Vestibulum tortor quam, feugiat.</div>
+                        <div class="firstColumnContentData">March 12, 2011</div>
+                        <div class="firstColumnContentHeader">Vestibulum tortor quam, feugiat.</div>
+                        <div class="firstColumnContentData">March 12, 2011</div>
+                    </div>
+                    <div class="three columns">
+                        <div class="underRibbonMenuHeader">ARCHIVES</div>
+                        <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                        <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                        <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                        <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                        <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                </div>
+                <div class="three columns">
+                        <div class="underRibbonMenuHeader">DUMMY TEXT</div>
+                        <div class="thirdColumnContent">
+                            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                            nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                            volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                            ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                        </div>
+                    </div>
+                    <div class="three columns">
+                        <div class="underRibbonMenuHeader">SEARCH</div>
+                        <div class="forthColumnContent">Type and hit enter</div>
+                        <div class="forthColumnInput">
+                            <input type="text"/>
+                            <div class="inputImage">
+                                 <a href=""><img src="searchIcon.png" alt=""></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bottomLine">
+            <div class="logoContainer">
+                <div class="row">
+                    <div class="twelve columns">
+                        <div class="bottomLineImageContainer">
+                            <img src="arrowDown.png" alt="">
+                        </div>
+                        <div class="ribbonAndDownText bottomLineText">
+                            HalfTone Theme by <a href="http://luiszuno.com">luiszuno.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,523 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>PayPaul</title>
+    <link rel="stylesheet" type="text/css" href="foundation.css">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+</head>
+<style type="text/css">
+    * {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        font-family: "MenschRegular", "helvetica", arial, sans-serif;
+    }
+    body {
+        margin: 0;
+        background: url("pageBackground.png");
+    }
+    p{
+        padding: 0;
+        margin: 0;
+        font-size: 12px;
+        line-height: 21px;
+        margin-top: 5px;
+        color: white;
+        font-weight: lighter;
+    }
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        cursor: pointer;
+    }
+    ul[type="none"] {
+        margin: 0;
+        padding: 0;
+    }
+    input:focus{
+        outline:none;
+    }
+    .row{
+        min-width: 0;
+    }
+    .pageContainer{
+        padding: 0 60px;
+        max-width: 1040px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+
+
+    .header{
+        background-color: #d3d1c1;
+        text-align: center;
+        border-bottom: 1px solid #ffffff;
+    }
+    .header .headerIcon{
+        padding: 14px 7px;
+    }
+
+
+    .logoContainer{
+        text-align: center;
+        background-color: #ebe8d5;
+        padding: 0 21px;
+        position: relative;
+        padding-bottom: 25px;
+    }
+    .logoContainer .logoRow{
+        border-bottom: 3px solid #9b9990;
+    }
+    .logoContainer #logoImage{
+        padding: 30px 0 35px 0;
+    }
+    .logoContainer .navigation{
+        margin-top: 4px;
+        border-top: 1px solid #9a998f;
+        border-bottom: 1px solid #9a998f;
+    }
+    .logoContainer .menuList {
+        margin: 22px 0;
+    }
+
+    .logoContainer ul.menuList li{
+        display: inline-block;
+        line-height: 35px;
+        margin: 2px 27px;
+    }
+    .logoContainer ul.menuList li a{
+        color: #4d4d4d;
+        font-size: 18px;
+        padding: 8px 0;
+        position: relative;
+    }
+    .logoContainer ul.menuList li a:hover{
+        color: #ffffff;
+        background-color: #e37655;
+        width: 100%;
+
+    }
+    .logoContainer ul.menuList li a:hover:after{
+        content: url(littleRibbonRight.png) no-repeat;
+        position: absolute;
+        top: 0;
+
+    }
+    .logoContainer ul.menuList li a:hover:before{
+        content: url(littleRibbonLeft.png) no-repeat;
+        position: absolute;
+        top: 0;
+        left: -14px;
+    }
+
+
+
+    .sliderContainer{
+        margin: 0 auto;
+        padding: 0 50px;
+        max-width: 1060px;
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+    .sliderContainer .row .twelve{
+        padding: 0;
+    }
+
+
+
+
+    .contentAfterSlider:before{
+        content: url("leftTriangle.png");
+        position: absolute;
+        top: -2px;
+        left: -10px;
+    }
+    .contentAfterSlider:after{
+        content: url("rightTriangle.png");
+        position: absolute;
+        top: -2px;
+        right: -10px;
+    }
+    .pageContainer .logoContainer .headerText{
+        padding-top: 70px;
+        font-size: 30px;
+        color: #4d4d4d;
+    }
+    .pageContainer .starLine{
+        padding: 0;
+        border-top: 3px solid #9e9c93;
+        margin-top: 54px;
+        width: 45%;
+        display: inline-block;
+        height: 7px;
+        border-bottom: 1px solid #9e9c93;
+    }
+    .starContainer{
+        text-align: center;
+        width: 10%;
+        float: left;
+    }
+    .pageContainer .leftLine{
+        float: left;
+    }
+    .pageContainer .rightLine{
+        float: right;
+    }
+    .pageContainer .logoContainer .starIcon{
+        padding-top: 45px;
+    }
+
+
+
+    .contentImage{
+        width: 100%;
+        height: 300px;
+        background-color: #a9b082;
+        position: relative;
+        text-align: center;
+    }
+    .dateImage{
+        position: absolute;
+        bottom: -36px;
+        left: 50%;
+        margin-left: -35.5px;
+    }
+    .contentHeader{
+        margin-top: 50px;
+        font-size: 13px;
+        padding-bottom: 20px;
+        color: #4d4d4d;
+        border-bottom: 1px solid #888888;
+        line-height: 22px;
+    }
+    .contentText{
+        font-size: 10px;
+        margin-top: 17px;
+        color: #888888;
+        padding-bottom: 50px;
+    }
+
+
+
+    .ribbonContainer{
+        background-color: #e37655;
+    }
+    .ribbonContainer:before{
+        content: url("leftRibbon.png");
+        position: absolute;
+        top: -10px;
+        left: -56px;
+    }
+    .ribbonContainer:after{
+        content: url("rightRibbon.png");
+        position: absolute;
+        top: -10px;
+        right: -57px;
+    }
+
+    .ribbonContainer .smallRibbonText{
+        color: #4d4d4d;
+        padding-top: 25px;
+        font-size: 12px;
+    }
+    .ribbonAndDownText{
+        color: #ffffff;
+        padding-top: 10px;
+        padding-bottom: 5px;
+    }
+    .ribbonAndDownText a{
+        color: #fdd600;
+    }
+
+
+
+    .underMenuContainer{
+        background: url("background.png") repeat;
+    }
+    .underMenuContainer .logoContainer{
+        background-color: transparent;
+    }
+    .underMenuContainer .underRibbonMenu{
+        padding-bottom: 70px;
+    }
+    .underRibbonMenu .three{
+        padding-top: 50px;
+    }
+    .underRibbonMenu .underRibbonMenuHeader{
+        font-size: 20px;
+        color: #e8e5d2;
+        border-bottom: 1px solid #605f5b;
+        padding-bottom: 5px;
+        margin-bottom: 7px;
+    }
+    .underRibbonMenu .firstColumnContentHeader{
+        text-align: left;
+        padding-top: 20px;
+        color: #e8e5d2;
+        font-size: 12px;
+    }
+    .underRibbonMenu .firstColumnContentData{
+        color: #878473;
+        text-align: left;
+        padding-top: 10px;
+        font-size: 12px;
+    }
+    .underRibbonMenu .secondColumnContent{
+        text-align: left;
+        padding-top: 20px;
+        color: #e8e5d2;
+        border-bottom: 1px solid #605f5b;
+        padding-bottom: 8px;
+        font-size: 12px;
+    }
+    .underRibbonMenu .secondColumnContent span{
+        color: #878473;
+    }
+    .underRibbonMenu .forthColumnContent,
+    .underRibbonMenu .thirdColumnContent{
+        text-align: left;
+        padding-top: 20px;
+        line-height: 20px;
+        font-size: 12px;
+        color: #e8e5d2;
+    }
+    .underRibbonMenu .forthColumnInput{
+        border-color: transparent;
+        border-radius: 0px;
+        margin-top: 15px;
+        height: 42px;
+        position: relative;
+    }
+    .underRibbonMenu .forthColumnInput input{
+        padding: 0 45px 0 15px;
+        border-color: transparent;
+        border-radius: 0px;
+        height: 100%;
+        margin: 0;
+        font-size: 12px;
+    }
+    .underRibbonMenu .forthColumnInput .inputImage{
+        position: absolute;
+        width: 42px;
+        height: 42px;
+        background-color: #f0eddd;
+        top: 0;
+        right: 0;
+        text-align: center;
+        border-left: 1px solid #c0beb1;
+    }
+    .underRibbonMenu .forthColumnInput .inputImage img{
+        margin-top: 12px;
+    }
+
+
+    .bottomLine .logoContainer{
+        background-color: #4d4d4d;
+        border-top: 1px solid #656565;
+    }
+    .bottomLine .bottomLineImageContainer{
+        position: absolute;
+        background: url("bottomArrowBackground.png");
+        width: 41px;
+        height: 27px;
+        top: -15px;
+        left: 50%;
+        margin-left: -20.5px;
+    }
+    .bottomLine .bottomLineImageContainer img{
+        padding-top: 10px;
+    }
+    .bottomLine .bottomLineText{
+        padding-top: 30px;
+    }
+
+
+
+
+
+
+
+
+
+    @media only screen and (max-width: 767px)
+    {
+         .pageContainer{
+             padding: 0;
+         }
+        .sliderContainer{
+            padding: 0;
+        }
+        .ribbonContainer:before,
+        .ribbonContainer:after,
+        .contentAfterSlider:before,
+        .contentAfterSlider:after{
+            display: none;
+        }
+        .pageContainer .starLine{
+            width: 45%;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<body>
+<div class="pageContainer">
+    <div class="header">
+        <div class="row">
+            <div class="twelve columns">
+                <a href="http://facebook.com"><img src="facebook.png" alt="facebook" class="headerIcon"/></a>
+                <a href=""><img src="socialLogo.png" alt="" class="headerIcon"/></a>
+                <a href="http://bribbble.com"><img src="sochialLogo3.png" alt="" class="headerIcon"/></a>
+                <a href="http://twitter.com"><img src="sochialLogo4.png" alt="" class="headerIcon"/></a>
+            </div>
+        </div>
+    </div>
+    <div class="logoContainer">
+        <div class="row logoRow">
+            <div class="twelve columns">
+                 <img src="logo.png" alt="" id="logoImage"/>
+            </div>
+        </div>
+        <div class="row navigation">
+            <div class="twelve columns">
+                <ul type="none" class="menuList">
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">BLOG</a></li>
+                    <li><a href="">WORK</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="sliderContainer">
+    <div class="row">
+        <div class="twelve columns">
+            <img src="ipad_1404.png" alt="">
+        </div>
+    </div>
+</div>
+<div class="pageContainer">
+    <div class="logoContainer contentAfterSlider">
+        <div class="row">
+            <div class="twelve columns headerText">
+                HALFTOWN IS STYLISH AND CUTE
+            </div>
+        </div>
+        <div class="row">
+            <div class="leftLine starLine"></div>
+            <div class="starContainer"><img src="star.png" alt="star" class="starIcon"/></div>
+            <div class="rightLine starLine"></div>
+
+        </div>
+    </div>
+    <div class="logoContainer">
+        <div class="row">
+            <div class="four columns">
+                <div class="contentImage">
+                    <img src="" alt="" class="contentImage"/>
+                    <img src="dataInCircule.png" alt="" class="dateImage"/>
+                </div>
+                <div class="contentHeader">PALLENTESQUE HABITANT MORBI TRISTIQUE SENECTUS ET NETUE ET</div>
+                <div class="contentText">webdesign, print, photo</div>
+            </div>
+            <div class="four columns">
+                <div class="contentImage">
+                    <img src="" alt="" class="contentImage"/>
+                    <img src="dataInCircule.png" alt="" class="dateImage"/>
+                </div>
+                <div class="contentHeader">PALLENTESQUE HABITANT MORBI TRISTIQUE SENECTUS ET NETUE ET</div>
+                <div class="contentText">webdesign, print, photo</div>
+            </div>
+            <div class="four columns">
+                <div class="contentImage">
+                    <img src="" alt="" class="contentImage"/>
+                    <img src="dataInCircule.png" alt="" class="dateImage"/>
+                </div>
+                <div class="contentHeader">PALLENTESQUE HABITANT MORBI TRISTIQUE SENECTUS ET NETUE ET</div>
+                <div class="contentText">webdesign, print, photo</div>
+            </div>
+        </div>
+    </div>
+    <div class="logoContainer ribbonContainer">
+        <div class="row">
+            <div class="smallRibbonText">about 16 hours ago</div>
+            <div class="ribbonAndDownText">New at ThemeForest - FitnessMag - Responsive Blogging WordPress Theme <a href="http://t.co/O3it76LI">http://t.co/O3it76LI</a> </div>
+        </div>
+    </div>
+    <div class="underMenuContainer">
+        <div class="logoContainer underRibbonMenu">
+            <div class="row">
+                <div class="three columns">
+                    <div class="underRibbonMenuHeader">RECENT POSTS</div>
+                    <div class="firstColumnContentHeader">Vestibulum tortor quam, feugiat.</div>
+                    <div class="firstColumnContentData">March 12, 2011</div>
+                    <div class="firstColumnContentHeader">Vestibulum tortor quam, feugiat.</div>
+                    <div class="firstColumnContentData">March 12, 2011</div>
+                    <div class="firstColumnContentHeader">Vestibulum tortor quam, feugiat.</div>
+                    <div class="firstColumnContentData">March 12, 2011</div>
+                </div><!--
+             --><div class="three columns">
+                    <div class="underRibbonMenuHeader">ARCHIVES</div>
+                    <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                    <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                    <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                    <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+                    <div class="secondColumnContent">January 12, 2011 <span>(16)</span></div>
+            </div><!--
+             --><div class="three columns">
+                    <div class="underRibbonMenuHeader">DUMMY TEXT</div>
+                    <div class="thirdColumnContent">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+                        nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat
+                        volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation
+                        ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+                    </div>
+                </div><!--
+             --><div class="three columns">
+                    <div class="underRibbonMenuHeader">SEARCH</div>
+                    <div class="forthColumnContent">Type and hit enter</div>
+                    <div class="forthColumnInput">
+                        <input type="text"/>
+                        <div class="inputImage">
+                            <img src="searchIcon.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bottomLine">
+        <div class="logoContainer">
+            <div class="row">
+                <div class="twelve columns">
+                    <div class="bottomLineImageContainer">
+                        <img src="arrowDown.png" alt="">
+                    </div>
+                    <div class="ribbonAndDownText bottomLineText">
+                        HalfTone Theme by <a href="http://luiszuno.com">luiszuno.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
