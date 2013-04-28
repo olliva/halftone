@@ -1,0 +1,404 @@
+* {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: "MenschRegular", "helvetica", arial, sans-serif;
+        }
+        body {
+            margin: 0;
+            background: url("img/pageBackground.png");
+        }
+        p{
+            padding: 0;
+            margin: 0;
+            font-size: 12px;
+            line-height: 21px;
+            margin-top: 5px;
+            color: white;
+            font-weight: lighter;
+        }
+        a{
+            text-decoration: none;
+        }
+        a:hover{
+            cursor: pointer;
+        }
+        ul[type="none"] {
+            margin: 0;
+            padding: 0;
+        }
+        input:focus{
+            outline:none;
+        }
+        .row{
+            min-width: 0;
+        }
+        .pageContainer{
+            padding: 0 60px;
+            max-width: 1040px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .header{
+            background-color: #d3d1c1;
+            text-align: center;
+            border-bottom: 1px solid #ffffff;
+        }
+
+        .header .headerIcon{
+            padding: 14px 7px;
+        }
+
+        .logoContainer{
+            text-align: center;
+            background-color: #ebe8d5;
+            padding: 0 21px;
+            position: relative;
+            padding-bottom: 25px;
+        }
+
+        .logoContainer .logoRow{
+            border-bottom: 3px solid #9b9990;
+        }
+
+        .logoContainer #logoImage{
+            padding: 30px 0 35px 0;
+        }
+
+        .logoContainer .navigation{
+            margin-top: 4px;
+            border-top: 1px solid #9a998f;
+            border-bottom: 1px solid #9a998f;
+        }
+
+        .logoContainer .menuList {
+            margin: 22px 0;
+        }
+
+
+        .logoContainer ul.menuList li{
+            display: inline-block;
+            line-height: 35px;
+            margin: 2px 27px;
+        }
+
+        .logoContainer ul.menuList li a{
+            color: #4d4d4d;
+            font-size: 18px;
+            padding: 8px 0;
+            display: block;
+            position: relative;
+        }
+
+        .logoContainer ul.menuList li a:hover{
+            color: #ffffff;
+            background-color: #e37655;
+            width: 100%;
+            line-height: 21px;
+        }
+
+        .logoContainer ul.menuList li a:hover:after{
+            content: " ";
+            background: url("img/littleRibbonRight.png");
+            width: 14px;
+            height: 37px;
+            position: absolute;
+            top: 0;
+        }
+
+        .logoContainer ul.menuList li a:hover:before{
+            content: " ";
+            background: url("img/littleRibbonLeft.png");
+            width: 14px;
+            height: 37px;
+            position: absolute;
+            top: 0;
+            left: -14px;
+        }
+
+        .sliderContainer{
+            margin: 0 auto;
+            padding: 0 50px;
+            max-width: 1060px;
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+        .sliderContainer .row .twelve{
+            padding: 0;
+        }
+        .sliderContainer img{
+            width: 100%;
+        }
+
+
+        .contentAfterSlider:before{
+            content: url("img/leftTriangle.png");
+            position: absolute;
+            top: -2px;
+            left: -10px;
+        }
+        .contentAfterSlider:after{
+            content: url("img/rightTriangle.png");
+            position: absolute;
+            top: -2px;
+            right: -10px;
+        }
+        .pageContainer .logoContainer .headerText{
+            padding-top: 70px;
+            font-size: 30px;
+            color: #4d4d4d;
+        }
+        .pageContainer .starLine{
+            padding: 0;
+            border-top: 3px solid #9e9c93;
+            margin-top: 54px;
+            width: 45%;
+            display: inline-block;
+            height: 7px;
+            border-bottom: 1px solid #9e9c93;
+        }
+        .starContainer{
+            text-align: center;
+            width: 10%;
+            float: left;
+        }
+        .pageContainer .leftLine{
+            float: left;
+        }
+        .pageContainer .rightLine{
+            float: right;
+        }
+        .pageContainer .logoContainer .starIcon{
+            padding-top: 45px;
+        }
+
+        .contentImage{
+            width: 100%;
+            position: relative;
+            text-align: center;
+        }
+        .contentImage img{
+            display: block;
+        }
+        .dateImage{
+            position: absolute;
+            bottom: -36px;
+            left: 50%;
+            margin-left: -35.5px;
+        }
+        .contentHeader{
+            margin-top: 50px;
+            font-size: 13px;
+            padding-bottom: 20px;
+            color: #4d4d4d;
+            border-bottom: 1px solid #888888;
+            line-height: 22px;
+        }
+        .contentText{
+            font-size: 10px;
+            margin-top: 17px;
+            color: #888888;
+            padding-bottom: 50px;
+        }
+
+
+        .ribbonContainer{
+            background-color: #e37655;
+        }
+        .ribbonContainer:before{
+            content: url("img/leftRibbon.png");
+            position: absolute;
+            top: -10px;
+            left: -56px;
+        }
+        .ribbonContainer:after{
+            content: url("img/rightRibbon.png");
+            position: absolute;
+            top: -10px;
+            right: -57px;
+        }
+
+        .ribbonContainer .smallRibbonText{
+            color: #4d4d4d;
+            padding-top: 25px;
+            font-size: 12px;
+        }
+        .ribbonAndDownText{
+            color: #ffffff;
+            padding-top: 10px;
+            padding-bottom: 5px;
+        }
+        .ribbonAndDownText a{
+            color: #fdd600;
+        }
+
+
+
+        .underMenuContainer{
+            background: url("img/background.png") repeat;
+        }
+        .underMenuContainer .logoContainer{
+            background-color: transparent;
+        }
+        .underMenuContainer .underRibbonMenu{
+            padding-bottom: 70px;
+        }
+        .underRibbonMenu .three{
+            padding-top: 50px;
+        }
+        .underRibbonMenu .underRibbonMenuHeader{
+            font-size: 20px;
+            color: #e8e5d2;
+            border-bottom: 1px solid #605f5b;
+            padding-bottom: 5px;
+            margin-bottom: 7px;
+        }
+        .underRibbonMenu .firstColumnContentHeader{
+            text-align: left;
+            padding-top: 20px;
+            color: #e8e5d2;
+            font-size: 12px;
+        }
+        .underRibbonMenu .firstColumnContentData{
+            color: #878473;
+            text-align: left;
+            padding-top: 10px;
+            font-size: 12px;
+        }
+        .underRibbonMenu .secondColumnContent{
+            text-align: left;
+            padding-top: 20px;
+            color: #e8e5d2;
+            border-bottom: 1px solid #605f5b;
+            padding-bottom: 8px;
+            font-size: 12px;
+        }
+        .underRibbonMenu .secondColumnContent span{
+            color: #878473;
+        }
+        .underRibbonMenu .forthColumnContent,
+        .underRibbonMenu .thirdColumnContent{
+            text-align: left;
+            padding-top: 20px;
+            line-height: 20px;
+            font-size: 12px;
+            color: #e8e5d2;
+        }
+        .underRibbonMenu .forthColumnInput{
+            border-color: transparent;
+            border-radius: 0px;
+            margin-top: 15px;
+            height: 42px;
+            position: relative;
+        }
+        .underRibbonMenu .forthColumnInput input{
+            padding: 15px 45px 15px 15px;
+            border-color: transparent;
+            border-radius: 0px;
+            height: 100%;
+            margin: 0;
+            font-size: 12px;
+            line-height: 12px;
+        }
+        .underRibbonMenu .forthColumnInput .inputImage{
+            position: absolute;
+            width: 42px;
+            height: 42px;
+            background-color: #f0eddd;
+            top: 0;
+            right: 0;
+            text-align: center;
+            border-left: 1px solid #c0beb1;
+        }
+        .underRibbonMenu .forthColumnInput .inputImage a{
+            width: 42px;
+            height: 42px;
+            display: block;
+        }
+        .underRibbonMenu .forthColumnInput .inputImage img{
+            margin-top: 12px;
+        }
+
+
+        .bottomLine .logoContainer{
+            background-color: #4d4d4d;
+            border-top: 1px solid #656565;
+        }
+        .bottomLine .bottomLineImageContainer{
+            position: absolute;
+            background: url("img/bottomArrowBackground.png");
+            width: 41px;
+            height: 27px;
+            top: -15px;
+            left: 50%;
+            margin-left: -20.5px;
+        }
+        .bottomLine .bottomLineImageContainer img{
+            padding-top: 10px;
+        }
+        .bottomLine .bottomLineText{
+            padding-top: 30px;
+        }
+
+
+
+
+
+        #slider-with-blocks-1 {
+            width: 100%;
+        }
+
+        
+
+        @media screen and (min-width: 0px) and (max-width: 960px) { 
+            .rsContent {
+                font-size: 22px;
+                line-height: 28px;
+            }
+            .blockHeadline {
+                font-size: 32px;
+                line-height: 32px;
+            }
+            .blockSubHeadline {
+                font-size: 26px;
+                line-height: 32px
+            }
+        }
+        @media screen and (min-width: 0px) and (max-width: 767px){
+            .pageContainer{
+                padding: 0;
+            }
+            .sliderContainer{
+                padding: 0;
+            }
+            .ribbonContainer:before,
+            .ribbonContainer:after,
+            .contentAfterSlider:before,
+            .contentAfterSlider:after{
+                display: none;
+            }
+            .pageContainer .starLine{
+                width: 45%;
+            }
+        }
+            
+        @media screen and (min-width: 0px) and (max-width: 500px) { 
+            .royalSlider,
+            .rsOverflow {
+                height: 330px !important;
+            }
+            .rsContent {
+                font-size: 18px;
+                line-height: 26px;
+            }
+            .blockHeadline {
+                font-size: 24px;
+                line-height: 32px;
+            }
+            .blockSubHeadline {
+                font-size: 22px;
+                line-height: 32px;
+            }
+        }
