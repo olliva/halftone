@@ -385,10 +385,7 @@
         }
             
         @media screen and (min-width: 0px) and (max-width: 500px) { 
-            .royalSlider,
-            .rsOverflow {
-                height: 330px !important;
-            }
+            
             .rsContent {
                 font-size: 18px;
                 line-height: 26px;
