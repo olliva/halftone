@@ -89,6 +89,7 @@
             padding: 8px 0;
             display: block;
             position: relative;
+            line-height: 21px;
         }
 
         .logoContainer ul.menuList li a:hover{
